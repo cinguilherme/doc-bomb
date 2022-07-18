@@ -1,0 +1,156 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Starting Jack-in Terminal: npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch :app
+; Jacking in...
+; Starting Jack-in Terminal: npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch :app
+; Jacking in...
+; Starting Jack-in Terminal: bb --nrepl-server 56578
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: npx nbb nrepl-server :port 56590
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Creating cljs repl session...
+; Connecting cljs repl: nbb...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Jack-in done.
+cljs꞉cljs.user꞉>  ; Use `alt+enter` to evaluate
+; Could not find namespace: re-frame.core
+cljs꞉ui-cljs.views꞉> 
+; Alias `subs` not found in `:auto-resolve`
+cljs꞉ui-cljs.views꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Starting Jack-in Terminal: npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch
+; Jacking in...
+; Starting Jack-in Terminal: npx shadow-cljs -d cider/cider-nrepl:0.28.5 watch
+; Connecting ...
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉shadow.user꞉> 
+; Creating cljs repl session...
+; Connecting cljs repl: shadow-cljs...
+;   The Calva Connection Log might have more connection progress information.
+; [:browser-repl] Configuring build.
+; [:browser-repl] Compiling ...
+; [:browser-repl] Build completed. (150 files, 149 compiled, 0 warnings, 3.07s)
+; Connected session: cljs, repl: browser-repl
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+nil
+cljs꞉ui-cljs.views꞉> 
+#'ui-cljs.views/main-panel
+cljs꞉ui-cljs.views꞉> 
+nil
+cljs꞉ui-cljs.stories.header-stories꞉> 
+nil
+cljs꞉ui-cljs.stories.header-stories꞉> 
+nil
+cljs꞉ui-cljs.stories.header-stories꞉> 
+nil
+cljs꞉ui-cljs.stories.header-stories꞉> 
+
+; dummy.cljs [line 3, col 53] The map literal starting with :title on line 2 column 7 contains 5 form(s). Map literals must contain an even number of forms.
+; dummy.cljs [line 1, col 2] Unmatched delimiter ).
+cljs꞉ui-cljs.stories.header-stories꞉> 
+
+; dummy.cljs [line 3, col 53] The map literal starting with :title on line 2 column 7 contains 5 form(s). Map literals must contain an even number of forms.
+; dummy.cljs [line 1, col 2] Unmatched delimiter ).
+cljs꞉ui-cljs.stories.header-stories꞉> 
+nil
+; ------ REPL Error while processing ---------------------------------------------
+; (ns ui-cljs.stories.header-stories
+  (:require [ui-cljs.header :refer [header]]
+            [reagent.core :as r]))
+Invalid :refer, var ui-cljs.header/header does not exist
+cljs꞉ui-cljs.stories.header-stories꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:2:18
+ Use of undeclared Var ui-cljs.stories.header-stories/header
+--------------------------------------------------------------------------------
+
+cljs꞉ui-cljs.stories.header-stories꞉> 
+#'ui-cljs.header/header
+cljs꞉ui-cljs.header꞉> 
+nil
+cljs꞉ui-cljs.header꞉> 
+nil
+cljs꞉ui-cljs.stories.headerstories꞉> 
+
+; dummy.cljs [line 3, col 46] The map literal starting with :title on line 2 column 7 contains 5 form(s). Map literals must contain an even number of forms.
+; dummy.cljs [line 1, col 2] Unmatched delimiter ).
+cljs꞉ui-cljs.stories.headerstories꞉> 
+nil
+cljs꞉ui-cljs.stories.headerstories꞉> 
+nil
+cljs꞉stories.headerstories꞉> 
+
+; dummy.cljs [line 3, col 46] The map literal starting with :title on line 2 column 7 contains 5 form(s). Map literals must contain an even number of forms.
+; dummy.cljs [line 1, col 2] Unmatched delimiter ).
+cljs꞉stories.headerstories꞉> 
+nil
+cljs꞉stories.headerstories꞉> 
+
+; dummy.cljs [line 3, col 46] The map literal starting with :title on line 2 column 7 contains 5 form(s). Map literals must contain an even number of forms.
+; dummy.cljs [line 1, col 2] Unmatched delimiter ).
+cljs꞉stories.headerstories꞉> 
+#'ui-cljs.header/header
+cljs꞉ui-cljs.header꞉> 
+nil
+cljs꞉ui-cljs.stories.headerstories꞉> 
+
+; dummy.cljs [line 3, col 46] The map literal starting with :title on line 2 column 7 contains 5 form(s). Map literals must contain an even number of forms.
+; dummy.cljs [line 1, col 2] Unmatched delimiter ).
+cljs꞉ui-cljs.stories.headerstories꞉> 
+nil
+cljs꞉ui-cljs.stories.headerstories꞉> 
+; Syntax error compiling at (shadow-cljs.edn:0:0).
+; Unable to resolve symbol: reagent in this context
+clj꞉user꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:3:20
+ Use of undeclared Var reagent.core/reactfy-component
+--------------------------------------------------------------------------------
+
+cljs꞉ui-cljs.stories.headerstories꞉> 
+nil
+cljs꞉ui-cljs.stories.headerstories꞉> 
