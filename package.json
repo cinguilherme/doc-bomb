@@ -22,9 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "tauri": "tauri",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "tauri": "tauri"
   },
   "eslintConfig": {
     "extends": [
