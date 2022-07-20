@@ -11,13 +11,13 @@
                  [devcards "0.2.3"]
                  [sablono "0.7.4"]
                  [javax.xml.bind/jaxb-api "2.3.0"]
+                 [cljs-material-ui "1.0.01"]
                  ;; need to specify this for sablono
                  ;; when not using devcards
                  [cljsjs/react "15.3.1-0"]
                  [cljsjs/react-dom "15.3.1-0"]
                  #_[org.omcljs/om "1.0.0-alpha46"]
-                 #_[reagent "0.6.0"]
-                 ]
+                 [reagent "0.7.0"]]
 
   :plugins [[lein-figwheel "0.5.9"]
             [lein-cljsbuild "1.1.5" :exclusions [org.clojure/clojure]]]

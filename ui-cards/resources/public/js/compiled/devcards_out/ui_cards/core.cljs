@@ -1,7 +1,9 @@
 (ns ui-cards.core
   (:require
    #_[om.core :as om :include-macros true]
-   [sablono.core :as sab :include-macros true])
+   [sablono.core :as sab :include-macros true]
+   [reagent.core :as r]
+   [ui-cards.components.header :as h])
   (:require-macros
    [devcards.core :as dc :refer [defcard deftest]]))
 
@@ -10,6 +12,9 @@
 (defcard first-card
   (sab/html [:div
              [:h1 "This is your first devcard!"]]))
+
+(defcard header-card
+  (sab/html (h/header "sample header")))
 
 (defn main []
   ;; conditionally start the app based on whether the #main-app-area

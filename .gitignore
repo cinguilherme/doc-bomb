@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/ui-cards/node_modules
+/ui-cards/target
+/ui-cards/resources/public/js/compiled
