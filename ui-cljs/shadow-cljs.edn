@@ -4,7 +4,9 @@
 
  :dependencies
  [[org.clojure/data.json "2.4.0"]
-  [org.clojure/tools.cli "1.0.206"] 
+  [org.clojure/tools.cli "1.0.206"]
+  [devcards "0.2.7"]
+  [arttuka/reagent-material-ui "5.6.2-1" :exclusions [arttuka/reagent-material-ui-js]]
   [reagent "1.1.1"]
   [re-frame "1.2.0"]
 
@@ -17,6 +19,7 @@
  :builds
  {:app
   {:target     :browser
+   :devcards true
    :output-dir "resources/public/js/compiled"
    :asset-path "/js/compiled"
    :modules
