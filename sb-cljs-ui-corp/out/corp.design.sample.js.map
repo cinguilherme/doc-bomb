@@ -1,0 +1,1 @@
+{"version":3,"sources":["corp/design/sample.cljs"],"mappings":";;;;;;;;;;;;;;AAEA,qGAAA,rGAACA","names":["cljs.core.prn"],"sourcesContent":["(ns corp.design.sample)\n\n(prn \"hi\")"]}
