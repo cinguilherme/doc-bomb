@@ -6,20 +6,20 @@
 use tauri::command;
 
 fn fib_internal(n: u64) -> u64 {
-  if n == 0 {
-    0
-  } else if n == 1 {
-    1
-  } else {
-    fib_internal(n - 1) + fib_internal(n - 2)
+  // fibonacci tail recursive 
+  fn fib_tail(n: u64, a: u64, b: u64) -> u64 {
+    if n == 0 {
+      a
+    } else {
+      fib_tail(n - 1, b, a + b)
+    }
   }
+  fib_tail(n, 0, 1)
 }
 
 #[command]
-fn fib(n: u64) -> String {
-  println!("fib({})", n);
-  let res = fib_internal(n);
-  res.to_string()
+fn fib(n: u64) -> u64 {
+  fib_internal(n)
 }
 
 #[command]
