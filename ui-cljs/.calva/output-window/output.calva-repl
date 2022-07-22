@@ -20,25 +20,19 @@ clj꞉shadow.user꞉>  ; Use `alt+enter` to evaluate
 ;   The Calva Connection Log might have more connection progress information.
 ; [:browser-repl] Configuring build.
 ; [:browser-repl] Compiling ...
-; [:browser-repl] Build completed. (150 files, 0 compiled, 0 warnings, 0.46s)
+; [:browser-repl] Build completed. (150 files, 0 compiled, 0 warnings, 0.61s)
 ; Connected session: cljs, repl: browser-repl
 ; TIPS: You can choose which REPL to use (clj or cljs):
 ;    *Calva: Toggle REPL connection*
 ;    (There is a button in the status bar for this)
 nil
-cljs꞉ui-cljs.views꞉>  ; Use `alt+enter` to evaluate
-nil
-cljs꞉ui-cljs.views꞉> 
-nil
-cljs꞉ui-cljs.views꞉> 
-nil
 ; ------ REPL Error while processing ---------------------------------------------
-; (ns ui-cljs.views
-  (:require-macros [devcards.core :as dc :refer [defcard deftest]])
-  (:require [re-frame.core :as re-frame]
-            [ui-cljs.subs :as subs]
-            [devcards.core :as dc]))
-The required namespace "devcards-marked" is not available, it was required by "devcards/util/markdown.cljs".
+; (ns ui-cljs.ui-components.fib
+  (:require [web.files.File :as File]
+            [ui-cljs.tauri-infra.infra :refer [invoke]]
+            [ui-cljs.util.util :refer [evt-value]]))
+The required namespace "ui-cljs.tauri-infra.infra" is not available, it was required by "ui_cljs/ui_components/fib.cljs".
+"ui_cljs/tauri_infra/infra.clj" was found on the classpath. Should this be a .cljs file?
 
-cljs꞉ui-cljs.views꞉> 
+cljs꞉ui-cljs.ui-components.fib꞉>  ; Use `alt+enter` to evaluate
 ; nREPL Connection was closed
