@@ -3,6 +3,7 @@
   windows_subsystem = "windows"
 )]
 
+use std::fmt::{Debug, Display};
 use tauri::command;
 
 async fn fib_internal(n: u64) -> u64 {
@@ -34,9 +35,36 @@ fn greet(name: &str) -> String {
   format!("Hello, {}!", name)
 }
 
+use serde::Deserialize;
+
+#[derive(Debug, Deserialize)]
+struct Thing {
+  id: u64 ,
+  name: String,
+}
+
+impl Display for Thing {
+  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    write!(f, "Thing id {}, name {}", self.id, self.name)
+  }
+}
+
+fn display_things(things: Vec<Thing>) {
+  for thing in things {
+    println!("{}", thing);
+  }
+}
+
+#[command]
+fn jshell(list: Vec<Thing>) -> String {
+  let disp = list.iter().map(|t| t.to_string()).collect::<Vec<String>>().join("\n");
+  println!("{}", disp);
+  return "hello".to_string();
+}
+
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![greet, fib])
+    .invoke_handler(tauri::generate_handler![greet, fib, jshell])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
