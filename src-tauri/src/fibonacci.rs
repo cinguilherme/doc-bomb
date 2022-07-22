@@ -15,6 +15,8 @@ pub async fn fib_internal(n: u64) -> u64 {
     fib_tail(n, 0, 1)
 }
 
+#[cfg(test)]
+#[allow(non_snake_case)]
 mod tests {
     use super::*;
 

@@ -22,9 +22,10 @@ fn greet(name: &str) -> String {
 }
 
 use jshell::Thing;
+use jshell::ShCommand;
 
 #[command]
-fn jshell(list: Vec<Thing>) -> Vec<String> {
+fn jshell(list: Vec<Thing>) -> Vec<ShCommand> {
   jshell::things_into_commands(list)
 }
 

@@ -1,10 +1,17 @@
 use std::fmt::Display;
 use serde::Deserialize;
+use serde::Serialize;
 
 #[derive(Debug, Deserialize)]
 pub struct Thing {
     id: u64 ,
     name: String,
+}
+
+#[derive(Debug, Serialize)]
+pub struct ShCommand {
+    pub id: u64,
+    pub command: String
 }
 
 impl Display for Thing {
@@ -17,12 +24,19 @@ fn thing_into_sh_string(thing: &Thing) -> String {
     format!("sh some-command --id {} --name {} --extra json", thing.id , thing.name)
 }
 
-pub fn things_into_commands(things: Vec<Thing>) -> Vec<String> {
-    let commands = things.iter().map(|thing| thing_into_sh_string(thing.clone())).collect::<Vec<String>>();
-    println!("{:?}", commands);
-    return commands;
+fn thing_into_command(thing: &Thing) -> ShCommand {
+    ShCommand {
+        id: thing.id,
+        command: thing_into_sh_string(thing)
+    }
 }
 
+pub fn things_into_commands(things: Vec<Thing>) -> Vec<ShCommand> {
+    things.iter().map(|thing| thing_into_command(thing.clone())).collect::<Vec<ShCommand>>()
+}
+
+#[cfg(test)]
+#[allow(non_snake_case)]
 mod tests {
     use super::*;
     
@@ -37,21 +51,13 @@ mod tests {
     }
     
     #[test]
-    fn test_things_into_commands() {
-        let things = vec![
-            Thing {
-                id: 1,
-                name: "test".to_string(),
-            },
-            Thing {
-                id: 2,
-                name: "test2".to_string(),
-            },
-        ];
-        let commands = things_into_commands(things);
-        assert_eq!(commands, vec![
-            "sh some-command --id 1 --name test --extra json",
-            "sh some-command --id 2 --name test2 --extra json",
-        ]);
+    fn test_thing_into_command() {
+        let thing = Thing {
+            id: 1,
+            name: "test".to_string(),
+        };
+        let command = thing_into_command(&thing);
+        assert_eq!(command.id, 1);
+        assert_eq!(command.command, "sh some-command --id 1 --name test --extra json");
     }
 }
