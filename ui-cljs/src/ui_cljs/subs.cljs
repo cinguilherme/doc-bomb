@@ -6,3 +6,8 @@
  ::name
  (fn [db]
    (:name db)))
+
+(re-frame/reg-sub
+ ::file-response
+ (fn [db]
+   (:file-response db))) 

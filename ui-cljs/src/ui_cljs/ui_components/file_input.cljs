@@ -1,6 +1,8 @@
 (ns ui-cljs.ui-components.file-input
   (:require [web.files.File :as File]
-            [ui-cljs.tauri-infra.infra :refer [invoke]] 
+            [ui-cljs.tauri-infra.infra :refer [invoke]]
+            [ui-cljs.events :as events]
+            [re-frame.core :as re-frame] 
             [cljs.core.async :refer [go]]
             [cljs.core.async.interop :refer [<p!]]))
 
@@ -13,6 +15,9 @@
 (defn invoke-jshell-backend [text]
   (->> #js {"list" text}
        (invoke "jshell")))
+
+(defn re-frame-event-with-data [data]
+  (re-frame/dispatch-sync [::events/file-response data]))
 
 (def file-input-comp
   [:div.container.px-4
@@ -31,4 +36,4 @@
                                             get-file-text-async <p!
                                             text->array-obj
                                             invoke-jshell-backend <p!)]
-                               (println resp))))}]])
+                               (re-frame-event-with-data resp))))}]])
