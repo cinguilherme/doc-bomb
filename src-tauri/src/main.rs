@@ -49,17 +49,15 @@ impl Display for Thing {
   }
 }
 
-fn display_things(things: Vec<Thing>) {
-  for thing in things {
-    println!("{}", thing);
-  }
+fn thing_into_sh_string(thing: &Thing) -> String {
+  format!("sh some-command --id {} --name {} --extra json", thing.id , thing.name)
 }
 
 #[command]
-fn jshell(list: Vec<Thing>) -> String {
-  let disp = list.iter().map(|t| t.to_string()).collect::<Vec<String>>().join("\n");
-  println!("{}", disp);
-  return "hello".to_string();
+fn jshell(list: Vec<Thing>) -> Vec<String> {
+  let commands = list.iter().map(|thing| thing_into_sh_string(thing.clone())).collect::<Vec<String>>();
+  println!("{:?}", commands);
+  return commands;
 }
 
 fn main() {

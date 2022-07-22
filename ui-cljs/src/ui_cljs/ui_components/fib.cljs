@@ -1,6 +1,8 @@
 (ns ui-cljs.ui-components.fib
   (:require [ui-cljs.tauri-infra.infra :refer [invoke]]
-            [ui-cljs.util.util :refer [evt-value]]))
+            [ui-cljs.util.util :refer [evt-value]]
+            [cljs.core.async.interop :refer [<p!]]
+            [cljs.core.async :refer [go]]))
 
 (defn fibonacci-backend [n]
   (int n)
@@ -13,7 +15,6 @@
    [:input
 
     {:type "number"
-     :on-change (fn [e] (-> (evt-value e)
-                            fibonacci-backend
-                            (.then  #(println %))
-                            (.catch #(println "unable to resolve promise: " %))))}]])
+     :on-change (fn [e] (go (-> (evt-value e)
+                                fibonacci-backend <p!
+                                println)))}]])

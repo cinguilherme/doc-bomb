@@ -1,7 +1,8 @@
 (ns ui-cljs.ui-components.file-input
   (:require [web.files.File :as File]
-            [ui-cljs.tauri-infra.infra :refer [tap invoke]]
-            [ui-cljs.util.util :refer [evt-value]]))
+            [ui-cljs.tauri-infra.infra :refer [invoke]] 
+            [cljs.core.async :refer [go]]
+            [cljs.core.async.interop :refer [<p!]]))
 
 (defn get-file-text-async [e]
   (-> e .-target .-files (aget 0) File/text))
@@ -26,8 +27,8 @@
 
             :on-change (fn [e]
                          (println "File changed, load file text")
-                         (.then (get-file-text-async e)
-                                #(do
-                                   (let [inpt (-> % text->array-obj)]
-                                     (.then (invoke-jshell-backend inpt)
-                                            (fn [x] (println x)))))))}]])
+                         (go (let [resp (-> e
+                                            get-file-text-async <p!
+                                            text->array-obj
+                                            invoke-jshell-backend <p!)]
+                               (println resp))))}]])
