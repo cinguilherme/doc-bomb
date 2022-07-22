@@ -14,3 +14,21 @@ pub async fn fib_internal(n: u64) -> u64 {
     }
     fib_tail(n, 0, 1)
 }
+
+mod tests {
+    use super::*;
+
+    //test fib_internal 
+    #[test]
+    fn test_fib_internal() {
+        
+        //tokio runtime is used to run the test
+        let mut rt = tokio::runtime::Runtime::new().unwrap();
+        let res = rt.block_on(async {
+            fib_internal(10).await
+        });
+        assert_eq!(res, 55);
+    }
+
+}
+
