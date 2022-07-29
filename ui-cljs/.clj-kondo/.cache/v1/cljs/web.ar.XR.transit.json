@@ -1,0 +1,1 @@
+["^ ","~$request-session",["^ ","~:row",7,"~:col",1,"~:varargs-min-arity",1,"~:name","^0","~:ns","~$web.ar.XR","~:top-ns","^6"],"~$supports-session",["^ ","^1",21,"^2",1,"~:fixed-arities",["~#set",[2]],"^4","^8","^5","^6","^7","^6"],"~:filename","/Users/guilhermecintra/.m2/repository/clojure-interop/cljs-web-api/1.0.10/cljs-web-api-1.0.10.jar:web/ar/XR.cljs"]

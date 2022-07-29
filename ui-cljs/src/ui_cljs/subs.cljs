@@ -11,3 +11,8 @@
  ::file-response
  (fn [db]
    (:file-response db))) 
+
+(re-frame/reg-sub
+ ::rejected-promise
+ (fn [db]
+   (:rejected-promise db)))

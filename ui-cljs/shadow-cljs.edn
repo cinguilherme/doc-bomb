@@ -6,6 +6,7 @@
  [[org.clojure/data.json "2.4.0"]
   [org.clojure/tools.cli "1.0.206"]
   [clojure-interop/cljs-web-api "1.0.10"]
+  [funcool/promesa "8.0.450"]
   [devcards "0.2.7"]
   [arttuka/reagent-material-ui "5.6.2-1" :exclusions [arttuka/reagent-material-ui-js]]
   [reagent "1.1.1"]

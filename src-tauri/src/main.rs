@@ -29,9 +29,14 @@ fn jshell(list: Vec<Thing>) -> Vec<ShCommand> {
   jshell::things_into_commands(list)
 }
 
+#[command]
+fn promise_me_error() -> Result<String, String> {
+  Err("Promise me error".to_string())
+}
+
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![greet, fib, jshell])
+    .invoke_handler(tauri::generate_handler![greet, fib, jshell, promise_me_error])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

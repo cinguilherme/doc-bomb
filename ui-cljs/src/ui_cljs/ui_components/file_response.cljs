@@ -1,8 +1,10 @@
 (ns ui-cljs.ui-components.file-response
   (:require [clojure.walk :refer [keywordize-keys]]))
 
-(def li-command (fn [x] (let [data (-> x js->clj keywordize-keys)]
-                          [:li {:key (:id data)} (str (:command data))])))
+(def li-command
+  (fn [x] (let [data (-> x js->clj keywordize-keys)]
+            [:li {:key (:id data)}
+             (str (:command data))])))
 
 (defn file-response-decomp [file-response]
   [:ul

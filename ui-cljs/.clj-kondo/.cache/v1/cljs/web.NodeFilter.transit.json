@@ -1,0 +1,1 @@
+["^ ","~$accept-node",["^ ","~:row",8,"~:col",1,"~:fixed-arities",["~#set",[2]],"~:name","^0","~:ns","~$web.NodeFilter","~:top-ns","^7"],"~:filename","/Users/guilhermecintra/.m2/repository/clojure-interop/cljs-web-api/1.0.10/cljs-web-api-1.0.10.jar:web/NodeFilter.cljs"]

@@ -32,7 +32,9 @@ fn thing_into_command(thing: &Thing) -> ShCommand {
 }
 
 pub fn things_into_commands(things: Vec<Thing>) -> Vec<ShCommand> {
-    things.iter().map(|thing| thing_into_command(thing.clone())).collect::<Vec<ShCommand>>()
+    things.iter()
+    .map(|thing| thing_into_command(thing.clone()))
+    .collect::<Vec<ShCommand>>()
 }
 
 #[cfg(test)]
